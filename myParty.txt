@@ -1,0 +1,102 @@
+
+CREATE TABLE Customer
+(
+  email 		VARCHAR(20)	NOT NULL,
+  CustomerFname	 VARCHAR(15)		 NOT NULL,
+  CustomerLname	 VARCHAR(15)		 NOT NULL,
+  PRIMARY KEY (email)
+);
+
+CREATE TABLE Place
+(
+  PlaceID 	CHAR(3)		NOT NULL,
+  address 	VARCHAR(20)	NOT NULL,
+  PlaceName 	VARCHAR(15)	NOT NULL,
+  City 		CHAR(15)		NOT NULL,
+  max_capacity	INT 		NOT NULL,
+  min_capacity		INT		NOT NULL,
+  costByPerson	INT 		NOT NULL,
+  PRIMARY KEY (PlaceID)
+);
+
+CREATE TABLE Type
+(
+  TypeID 	CHAR(3)		NOT NULL,
+  TypeName 	VARCHAR(15)	 NOT NULL,
+  PRIMARY KEY (TypeID)
+);
+
+CREATE TABLE Theme
+(
+  ThemeID 		CHAR(3)		NOT NULL,
+  ThemeName		VARCHAR(15)	NOT NULL,
+  ThemeCost 		INT 			NOT NULL,
+  ThemePicture 	LONGBLOB 		NOT NULL,
+  PRIMARY KEY (ThemeID)
+);
+
+CREATE TABLE Customer_Phone
+(
+  Phone 	CHAR(11)		NOT NULL,
+  email 	VARCHAR(20)	NOT NULL,
+  PRIMARY KEY (Phone, email),
+  FOREIGN KEY (email) REFERENCES Customer(email)
+);
+
+CREATE TABLE Planner
+(
+  PlannerID 		CHAR(3)		 NOT NULL,
+  PlannerFName 	 VARCHAR(15)	 NOT NULL,
+  PlannerLName 	 VARCHAR(15)	 NOT NULL,
+  PlannerPhone 	CHAR(11)		NOT NULL,
+  PlannerEmail 	VARCHAR(20)	 NOT NULL,
+  managerID 		CHAR(3)		 NOT NULL,
+  PRIMARY KEY (PlannerID),
+  FOREIGN KEY (managerID) REFERENCES Manager(managerID),
+  UNIQUE (PlannerEmail)
+);
+
+CREATE TABLE Manager
+(
+  managerID	 	CHAR(3)	NOT NULL,
+  ManagerFName 	 VARCHAR(15)	 NOT NULL,
+  ManagerLName 	 VARCHAR(15)	 NOT NULL,
+  ManagerPhone 	CHAR(11)		NOT NULL,
+  emailId 		VARCHAR(20)	 NOT NULL,
+  PRIMARY KEY (managerID),
+  FOREIGN KEY (emailId) REFERENCES LogInInfo(emailId)
+);
+
+CREATE TABLE Party
+(
+  PartyID	 CHAR(3)	 NOT NULL,
+  NoOfGuests	 INT 		NOT NULL,
+  DateTime 	DATETIME 	 NOT NULL,
+  email 	 VARCHAR(20)	 NOT NULL,
+  PlannerID	 CHAR(3)	 NOT NULL,
+  PlaceID	 CHAR(3)	 NOT NULL,
+  TypeID 	 CHAR(3)	 NOT NULL,
+  ThemeID 	 CHAR(3),
+  PRIMARY KEY (PartyID),
+  FOREIGN KEY (email) REFERENCES Customer(email),
+  FOREIGN KEY (PlannerID) REFERENCES Planner(PlannerID),
+  FOREIGN KEY (PlaceID) REFERENCES Place(PlaceID),
+  FOREIGN KEY (TypeID) REFERENCES Type(TypeID),
+  FOREIGN KEY (ThemeID) REFERENCES Theme(ThemeID),
+  UNIQUE (DateTime)
+);
+
+CREATE TABLE LogInInfo
+(
+  emailId 	 VARCHAR(20)	 NOT NULL,
+  password 	 INT 			NOT NULL,
+  email 	 VARCHAR(20)	 NOT NULL,
+  PlannerID 	CHAR(3)	 NOT NULL,
+  PRIMARY KEY (emailId),
+  FOREIGN KEY (email) REFERENCES Customer(email),
+  FOREIGN KEY (PlannerID) REFERENCES Planner(PlannerID)
+);
+
+
+
+
