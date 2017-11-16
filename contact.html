@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.container {
+    width: 100%;
+}
+
+header, footer {
+    padding: 1em;
+    color: LightCoral;
+    background-color: pink;
+    clear: left;
+    text-align: center;
+	background: url(header.jpg);
+	background-position: 100% 100%;
+    
+}
+
+
+
+
+article {
+   
+    padding: 1em;
+    overflow: hidden;
+    color:PaleVioletRed;
+	text-align: center;
+    height: 400px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<header>
+   <h1>MyParty</h1>
+</header>
+ <article>
+<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+	<div class="row">
+		<label for="name">Your name:</label><br />
+		<input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+	</div>
+	<div class="row">
+		<label for="email">Your email:</label><br />
+		<input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+	</div>
+	<div class="row">
+		<label for="message">Your message:</label><br />
+		<textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+	</div>
+	<input id="submit_button" type="submit" value="Send email" />
+</form>						
+</article>
+
+<footer>Copyright &copy; MyParty.com </footer>
+
+</div>
+
+</body>
+</html>
