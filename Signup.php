@@ -1,3 +1,8 @@
+<?php
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,6 +95,9 @@ text-align:center;
 	
 		<label for="Last name">Last name:</label><br />
 		<input id="Lname" placeholder="First Name" class="input" name="Lname" type="text" value="" required>
+    
+        <label for="phone">phone number:</label><br />
+		<input id="phone" placeholder="phone number" class="input" name="phone" type="text" value="" required>
 	
 		<label for="email">Email:</label><br />
 		<input id="email" placeholder="Email" class="input" name="email" type="text" value="" required>
@@ -97,7 +105,7 @@ text-align:center;
 		<input type="password" placeholder="Enter Password" name="psw" required>
 		<label>Repeat Password</label>
     	<input type="password" placeholder="Repeate Password" name="psw" required>
-
+		
 		<div >
 		 <input class="button" type="submit" name="submit" value="Sign Up">
 		 </div>
