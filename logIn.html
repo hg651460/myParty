@@ -1,0 +1,110 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Page</title>
+<style>
+div.container {
+    width: 100%;
+  
+}
+
+
+
+header {
+    padding: 1em;
+    border-color: antiquewhite;
+    color: black;
+    background-color: pink;
+    clear: left;
+    font-size: 250%;
+    font-style: italic;
+    text-align:center;
+    text-decoration-color:black;
+	background: url(p.jpg);
+
+    
+}
+    footer {
+    padding: 1em;
+    border-color: antiquewhite;
+    color: black
+    background-color: pink;
+    clear: left;
+    text-align:center;
+    text-decoration-color:black;
+	background: url(p.jpg);
+
+    
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 2em;
+    overflow: hidden;
+    color:PaleVioletRed;
+	text-align: center;
+   
+}
+    section {
+        background: antiquewhite;
+        color: black;
+        position: inherit;
+        font-size: x-large;
+        border-radius: 1em;
+        padding: 1em;
+        }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+   <h1>MyParty</h1>
+</header>
+  
+
+<article>
+  <div> <p>welcome to the MyParty for party arrangement</p></div> 
+  
+<div>
+   <form action="logInAction.php" method="get">
+    <h1>Log In</h1>
+
+</br>
+
+<section>
+
+Email Address:
+</br><input type="email" placeholder="Enter Email..." size=30 name="email"></br>
+</br>
+
+Password:
+</br><input type="Password" placeholder="Enter Password" size=30 name="pass"></br>
+</br>
+ <p > Not a member yet ?
+ <a href="Signup.php" class="to_register">Join us</a>
+ </p>
+ <tr><td><input type="submit" value="Submit"></td></tr>
+
+</br></br>
+
+</section>
+</form>
+<?php
+ 
+   
+</div>
+</article>
+
+<footer>Copyright &copy; MyParty.com </footer>
+
+</div>
+
+</body>
+</html>
