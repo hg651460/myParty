@@ -1,4 +1,9 @@
 
+<?php
+  require 'connect.php';
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -82,10 +87,11 @@ article {
 </nav>
 
 <article>
-  <div> <p>welcome to the planner view</p></div> 
+<h1>Welcome    "  <?php echo $_SESSION ['login_user'];  ?> "    to your view</h1>
+<p> Your List of customers and their party orders : </p>
  <div>  
 <?php
-  require 'connect.php';
+ 
 
      $varConn = Connect();
     if (!$varConn)
@@ -93,11 +99,14 @@ article {
         die('Could not connect: ' . mysql_error());
     }
      
-     
-$sql = 'SELECT party.PartyID, party.NoOfGuests, party.DateTime, customer.CustomerFName, customer.CustomerLName, place.PlaceName, type.TypeName, theme.ThemeName 
-        From  party, customer, place, theme, type
+$user_check = $_SESSION['login_user'];    
+$sql = "SELECT party.PlannerID, party.PartyID, party.NoOfGuests, party.DateTime, customer.CustomerFName, customer.CustomerLName, place.PlaceName, type.TypeName, theme.ThemeName ,planner.PlannerEmail
+        From  party, customer, place, theme, type, planner
         WHERE party.CustomerID=customer.CustomerId AND party.PlaceID=place.PlaceID AND party.ThemeID=theme.ThemeID 
-               AND party.TypeID=type.TypeID';    
+               AND party.TypeID=type.TypeID AND party.PlannerID = planner.PlannerID AND planner.PlannerEmail='$user_check' ";  
+     
+    
+     
 $result = $varConn->query($sql);     
 if ($result->num_rows > 0) {
     echo "<table border='1' >";
