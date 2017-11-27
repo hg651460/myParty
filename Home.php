@@ -59,7 +59,7 @@ article {
   <ul>
     <li><a href="Signup.html">Signup</a></li>
     <li><a href="#">Log In</a></li>
-    <li><a href="#">Gallery</a></li>
+    <li><a href="partyblogs.htm">Gallery</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
