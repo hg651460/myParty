@@ -1,6 +1,7 @@
 <?php
  
     require 'connect.php';
+    session_start(); //start a session
 
     $varConn = Connect();
     if (!$varConn)
@@ -16,12 +17,21 @@ if ($result->num_rows > 0) {
         print ("<table border =1 ><th>UserName:</th> <th>PassWord</th>");
         while($row = $result->fetch_assoc()) {
             print_r("<tr><td>" . $row['email']. "</td><td> ". $row['password']. " ". "</td></tr>"); // userName & PassWord are a column in my testtable.
+            
+            
             if($row['PlannerID'])
-                header('Refresh: 2;url=plannerView.php');// Redirect to Show.php after 3 Sec
+            {
+                  
+                 $_SESSION['login_user'] = $varUser;
+                  header('Refresh: 1;url=plannerView.php');// Redirect to plannerView.php after 1 Sec
+            }
             else if($row['managerID'])
-                header('Refresh: 2;url=managerView.php');// Redirect to Show.php after 3 Sec
+            {
+                $_SESSION['login_user'] = $varUser;
+                header('Refresh: 1;url=managerView.php');// Redirect to managerView.php after 1 Sec
+            }
             /* else if($row['CustomerID'])
-                header('Refresh: 2;url=customerView.php');// Redirect to Show.php after 3 Sec */
+                header('Refresh: 2;url=customerView.php'); */
             else 
                 header('Refresh: 2;url=Home.php');// Redirect to Show.php after 3 Sec
         }
