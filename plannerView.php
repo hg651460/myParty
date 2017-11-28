@@ -87,9 +87,11 @@ article {
 </nav>
 
 <article>
-<h1>Welcome    "  <?php echo $_SESSION ['login_user'];  ?> "    to your view</h1>
+<h1>Welcome    "  <?php echo $_SESSION ['login_user'];  ?> " </h1>
+</br>
 <p> Your List of customers and their party orders : </p>
- <div>  
+<div>  
+
 <?php
  
 
@@ -102,8 +104,12 @@ article {
 $user_check = $_SESSION['login_user'];    
 $sql = "SELECT party.PlannerID, party.PartyID, party.NoOfGuests, party.DateTime, customer.CustomerFName, customer.CustomerLName, place.PlaceName, type.TypeName, theme.ThemeName ,planner.PlannerEmail
         From  party, customer, place, theme, type, planner
-        WHERE party.CustomerID=customer.CustomerId AND party.PlaceID=place.PlaceID AND party.ThemeID=theme.ThemeID 
-               AND party.TypeID=type.TypeID AND party.PlannerID = planner.PlannerID AND planner.PlannerEmail='$user_check' ";  
+        WHERE party.CustomerID = customer.CustomerId 
+        	  AND party.PlaceID = place.PlaceID 
+        	  AND party.ThemeID = theme.ThemeID 
+              AND party.TypeID = type.TypeID 
+              AND party.PlannerID = planner.PlannerID 
+              AND planner.PlannerEmail ='$user_check' ";  
      
     
      

@@ -86,10 +86,10 @@ article {
 </nav>
 
 <article>
-  <div> <p>welcome to the manager view</p></div> 
-  </br></br>
-  <div> <p>planner details: </p></div> 
- <div>  
+<h1>Welcome    "  <?php echo $_SESSION ['login_user'];  ?> "</h1>
+</br>
+<p>Party planner details: </p> 
+<div>  
 
 <?php
   require 'connect.php';
@@ -100,12 +100,11 @@ article {
         die('Could not connect: ' . mysql_error());
     }
      
-     
-$sql = 'SELECT planner.PlannerFName, planner.plannerLName, planner.PlannerPhone, planner.PlannerEmail, party.PartyID, party.NoOfGuests, party.DateTime, place.PlaceName, type.TypeName, theme.ThemeName 
-        From  party, planner, place, theme, type
-        WHERE party.PlaceID=place.PlaceID AND party.ThemeID=theme.ThemeID AND planner.PlannerID = party.PlannerID
-               AND party.TypeID=type.TypeID  
-        GROUP BY planner.PlannerFName';
+$user_check = $_SESSION['login_user'];    
+$sql = "SELECT planner.PlannerFName, planner.plannerLName, planner.PlannerPhone, planner.PlannerEmail, party.PartyID, party.NoOfGuests, party.DateTime, place.PlaceName, type.TypeName, theme.ThemeName, manager.email 
+        From  party, planner, place, theme, type, manager
+        WHERE party.PlaceID = place.PlaceID AND party.ThemeID = theme.ThemeID AND planner.PlannerID = party.PlannerID AND party.TypeID = type.TypeID AND planner.managerID = manager.managerID AND manager.email ='$user_check'  
+        GROUP BY planner.PlannerFName";
 
 $result = $varConn->query($sql);     
 if ($result->num_rows > 0) {
