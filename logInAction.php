@@ -30,8 +30,10 @@ if ($result->num_rows > 0) {
                 $_SESSION['login_user'] = $varUser;
                 header('Refresh: 1;url=managerView.php');// Redirect to managerView.php after 1 Sec
             }
-            /* else if($row['CustomerID'])
-                header('Refresh: 2;url=customerView.php'); */
+             else if($row['CustomerID']){
+                $_SESSION['login_user'] = $varUser;
+                header('Refresh: 2;url=customerView.php');// Redirect to customerView.php after 1 Sec 
+            }
             else 
                 header('Refresh: 2;url=Home.php');// Redirect to Show.php after 3 Sec
         }
