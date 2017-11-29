@@ -86,10 +86,9 @@ article {
 </nav>
 
 <article>
-<h1>Welcome    "  <?php echo $_SESSION ['login_user'];  ?> "</h1>
-</br>
-<p>Party planner details: </p> 
-<div>  
+<h1>Welcome    "  <?php echo $_SESSION ['login_user'];  ?> "    to your view</h1>
+<p> Your List of all planners , customers and their party orders : </p>
+ <div> 
 
 <?php
 
