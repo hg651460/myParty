@@ -100,7 +100,7 @@ article {
     }
      
 $user_check = $_SESSION['login_user'];    
-$sql = "SELECT planner.PlannerFName, planner.plannerLName, planner.PlannerPhone, planner.PlannerEmail, party.PartyID, party.NoOfGuests, party.DateTime, place.PlaceName, type.TypeName, theme.ThemeName, manager.email 
+$sql = "SELECT planner.PlannerFName, planner.PlannerLName, planner.PlannerPhone, planner.PlannerEmail, party.PartyID, party.NoOfGuests, party.DateTime, place.PlaceName, type.TypeName, theme.ThemeName, manager.email 
         From  party, planner, place, theme, type, manager
         WHERE party.PlaceID = place.PlaceID AND party.ThemeID = theme.ThemeID AND planner.PlannerID = party.PlannerID AND party.TypeID = type.TypeID AND planner.managerID = manager.managerID AND manager.email ='$user_check'  
         GROUP BY planner.PlannerFName";
