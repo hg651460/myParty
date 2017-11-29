@@ -92,7 +92,6 @@ article {
 <div>  
 
 <?php
-  require 'connect.php';
 
      $varConn = Connect();
     if (!$varConn)
