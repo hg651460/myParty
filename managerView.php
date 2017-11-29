@@ -104,20 +104,20 @@ $sql = 'SELECT planner.PlannerFName, planner.PlannerLName, party.PartyID, party.
         From  party, customer, place, theme, type, planner
         WHERE party.CustomerID=customer.CustomerId AND party.PlaceID=place.PlaceID AND party.ThemeID=theme.ThemeID 
                AND party.TypeID=type.TypeID AND party.PlannerID=planner.PlannerID';
-
+     
 $result = $varConn->query($sql);     
 if ($result->num_rows > 0) {
     echo "<table border='1' >";
             echo "<tr>";
-                echo "<th>First Name</th>";
-                echo "<th>Last Name</th>";
-                echo "<th>Phone</th>";
-                echo "<th>Email</th>";
+                echo "<th>planner First Name</th>";
+                echo "<th>planner Last Name</th>";
                 echo "<th>party ID</th>";
                 echo "<th>Number of guests</th>";
-                echo "<th>Date and Time</th>";
-                echo "<th>Place </th>";
-                echo "<th>Party Type </th>";
+                echo "<th>date and Time</th>";
+                echo "<th>customer First Name</th>";
+                echo "<th>customer Last Name</th>";
+                echo "<th>place </th>";
+                echo "<th>party Type </th>";
                 echo "<th>Theme </th>";
     
             echo "</tr>";
@@ -125,11 +125,11 @@ if ($result->num_rows > 0) {
             echo "<tr>";
                 echo "<td>" . $row['PlannerFName'] . "</td>";
                 echo "<td>" . $row['PlannerLName'] . "</td>";
-                echo "<td>" . $row['PlannerPhone'] . "</td>";
-                echo "<td>" . $row['PlannerEmail'] . "</td>";
                 echo "<td>" . $row['PartyID'] . "</td>";
                 echo "<td>" . $row['NoOfGuests'] . "</td>";
                 echo "<td>" . $row['DateTime'] . "</td>";
+                echo "<td>" . $row['CustomerFName'] . "</td>";
+                echo "<td>" . $row['CustomerLName'] . "</td>";
                 echo "<td>" . $row['PlaceName'] . "</td>";
                 echo "<td>" . $row['TypeName'] . "</td>";
                 echo "<td>" . $row['ThemeName'] . "</td>";
