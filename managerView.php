@@ -100,10 +100,10 @@ article {
     }
      
 $user_check = $_SESSION['login_user'];    
-$sql = "SELECT planner.PlannerFName, planner.PlannerLName, planner.PlannerPhone, planner.PlannerEmail, party.PartyID, party.NoOfGuests, party.DateTime, place.PlaceName, type.TypeName, theme.ThemeName, manager.email 
-        From  party, planner, place, theme, type, manager
-        WHERE party.PlaceID = place.PlaceID AND party.ThemeID = theme.ThemeID AND planner.PlannerID = party.PlannerID AND party.TypeID = type.TypeID AND planner.managerID = manager.managerID AND manager.email ='$user_check'  
-        GROUP BY planner.PlannerFName";
+$sql = 'SELECT planner.PlannerFName, planner.PlannerLName, party.PartyID, party.NoOfGuests, party.DateTime, customer.CustomerFName,    customer.CustomerLName, place.PlaceName, type.TypeName, theme.ThemeName 
+        From  party, customer, place, theme, type, planner
+        WHERE party.CustomerID=customer.CustomerId AND party.PlaceID=place.PlaceID AND party.ThemeID=theme.ThemeID 
+               AND party.TypeID=type.TypeID AND party.PlannerID=planner.PlannerID';
 
 $result = $varConn->query($sql);     
 if ($result->num_rows > 0) {
