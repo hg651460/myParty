@@ -23,7 +23,7 @@ header, footer {
 nav {
     float: left;
     width: 120px;
-    margin: 0;
+     margin: 0;
     padding: 1em;
 }
 
@@ -57,7 +57,7 @@ article {
   
 <nav>
   <ul>
-    <li><a href="Signup.html">Signup</a></li>
+    <li><a href="Signup.html">Sign up</a></li>
      <li><a href="logIn.html">Log In</a></li>
     <li><a href="partyblogs.htm">Gallery</a></li>
     <li><a href="contact.html">Contact</a></li>
