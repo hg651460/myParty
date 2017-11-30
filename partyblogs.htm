@@ -1,11 +1,8 @@
-<?php
-
-
-?>
 
 <!DOCTYPE html>
 <html>
 <head>
+
 <style>
 div.container {
     width: 100%;
@@ -18,126 +15,81 @@ header, footer {
     background-color: pink;
     clear: left;
     text-align: center;
-	background: url(header.jpg);
+	background: url(images/header.jpg);
 	background-position: 100% 100%;
     
 }
 
+nav {
+    float: left;
+    width: 120px;
+    margin: 0;
+    padding: 1em;
+}
 
-
+nav ul {
+    list-style-type:none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration:none;
+}
 
 article {
-   
+    margin-left: 170px;
+    border-left: 1px solid gray;
     padding: 1em;
     overflow: hidden;
     color:PaleVioletRed;
-	text-align: left;
-    
-}
-/* Full-width input fields */
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-.button {
-    background-image: #ffffff;
-    color: #C71585;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: #C71585;
-    cursor: pointer;
-    width: 40%;
-text-align:center;
-}
-
-
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn,.signupbtn {
-    float: left;
-    width: 50%;
-}
-
-/* Add padding to container elements */
-.container {
-    padding: 16px;
-}
-
-/* Clear floats */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+	text-align: center;
+    height: 1200px;
 }
 </style>
-
-
-
 </head>
 <body>
 
 <div class="container">
+
 <header>
    <h1>MyParty</h1>
 </header>
+  
+<nav>
+  <ul>
+  <li><a href="Home.html">Home</a></li>
+    <li><a href="Signup.html">Signup</a></li>
+     <li><a href="logIn.html">Log In</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+
+</br>
 
 <article>
-<form id="signup_form" action="#" method="POST" enctype="multipart/form-data">
+<img src="images/wedding.jpg" alt="Wedding Party" width="250" height="200" hspace="10">
+<img src="images/Recpetion.jpg" alt="Recpetion Party" width="250" height="200" hspace="10">
+<img src="images/Wedding-Anniversary.jpg" alt="Wedding Anniversary Party" width="250" height="200" hspace="10">
+<img src="images/birthday.jpg" alt="Birthday Party" width="250" height="200" hspace="10">
+<img src="images/disney-theme.jpg" alt="Disney Party" width="250" height="200" hspace="10">
+<img src="images/Disneyhouse.jpg" alt="Disney Party" width="250" height="200" hspace="10">
+<img src="images/halloween.jpg" alt="Halloween Party" width="250" height="200" hspace="10">
+<img src="images/night-club.jpg" alt="Night Club Party" width="250" height="200" hspace="10">
+<img src="images/costume.jpg" alt="Costume Party" width="250" height="200" hspace="10">
+<img src="images/shutterstock.jpg" alt="Cocktail Party" width="250" height="200" hspace="10">
+<img src="images/dinner-table.jpg" alt="Dinner Party" width="250" height="200" hspace="10">
+<img src="images/Garden-party.jpg" alt="Garden Party" width="250" height="200" hspace="10">
+<img src="images/Baby_Shower.jpg" alt="Baby Shower Party" width="250" height="200" hspace="10">
+<img src="images/baby-shower-party-girl.jpg" alt="Baby Shower Party" width="250" height="200" hspace="10">
+<img src="images/baby-shower-party-boy.jpg" alt="Baby Shower Party" width="250" height="200" hspace="10">
+<img src="images/graduation.jpg" alt="Graduation Party" width="250" height="200" hspace="10">
+<img src="images/karaoke.jpg" alt="Karaoke Party" width="250" height="200" hspace="10">
+<img src="images/party-themes.jpg" alt="Theme Party" width="250" height="200" hspace="10">
 
-		<label for="First name">First name:</label><br />
-		<input id="Fname" type="text" placeholder="First Name" class="input" name="Fname"  required>
-	
-		<label for="Last name">Last name:</label><br />
-		<input id="Lname" placeholder="First Name" class="input" name="Lname" type="text" value="" required>
-    
-        <label for="phone">phone number:</label><br />
-		<input id="phone" placeholder="phone number" class="input" name="phone" type="text" value="" required>
-	
-		<label for="email">Email:</label><br />
-		<input id="email" placeholder="Email" class="input" name="email" type="text" value="" required>
-		<label>Password</label>
-		<input type="password" placeholder="Enter Password" name="psw" required>
-		<label>Repeat Password</label>
-    	<input type="password" placeholder="Repeate Password" name="psw" required>
-		
-		<div >
-		 <input class="button" type="submit" name="submit" value="Sign Up">
-		 </div>
-
-     
-</div>
-</form>						
 </article>
 
 <footer>Copyright &copy; MyParty.com </footer>
-
-</div>
-
-</body>
-</html>
-
-
-</br></br>
-
-<div >
-<img src="wedding.jpg" alt="Wedding Party" width="250" height="200" hspace="10">
-<img src="Wedding-Anniversary.jpg" alt="Wedding Anniversary Party" width="250" height="200" hspace="10">
-<img src="graduation.jpg" alt="Graduation Party" width="250" height="200" hspace="10">
-<img src="party-themes.jpg" alt="Theme Party" width="250" height="200" hspace="10">
-<img src="karaoke.jpg" alt="Karaoke Party" width="250" height="200" hspace="10">
-<img src="birthday.jpg" alt="Birthday Party" width="250" height="200" hspace="10">
-<img src="disney-theme.jpg" alt="Disney Party" width="250" height="200" hspace="10">
-<img src="Disneyhouse.jpg" alt="Disney Party" width="250" height="200" hspace="10">
-<img src="halloween.jpg" alt="Halloween Party" width="250" height="200" hspace="10">
-<img src="Baby_Shower.jpg" alt="Baby Shower Party" width="250" height="200" hspace="10">
-<img src="baby-shower-party-girl.jpg" alt="Baby Shower Party" width="250" height="200" hspace="10">
-<img src="baby-shower-party-boy.jpg" alt="Baby Shower Party" width="250" height="200" hspace="10">
 
 </div>
 

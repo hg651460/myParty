@@ -64,60 +64,61 @@ INSERT INTO `place` VALUES ('','1445 East Schuylkill Road','Giannis Event Venue'
 CREATE TABLE Type
 (
   TypeID 	int NOT NULL AUTO_INCREMENT,
-  TypeName 	VARCHAR(15)	 NOT NULL,
+  TypeName 	VARCHAR(30)	 NOT NULL,
+  TypePicture  VARCHAR(30)     NOT NULL,
   PRIMARY KEY (TypeID)
 );
 
-INSERT INTO `type` VALUES ('1','Baby Boy Shower');
-INSERT INTO `type` VALUES ('2','Baby Girl Shower');
-INSERT INTO `type` VALUES ('3','Gender Reveal');
-INSERT INTO `type` VALUES ('4','General Baby Shower');
-INSERT INTO `type` VALUES ('5','Birthday Party');
-INSERT INTO `type` VALUES ('6','Surprise Party');
-INSERT INTO `type` VALUES ('7','Dinner');
-INSERT INTO `type` VALUES ('8','Anniversary');
-INSERT INTO `type` VALUES ('9','Tea Party');
-INSERT INTO `type` VALUES ('10','Garden Party');
-INSERT INTO `type` VALUES ('11','Cocktail Party');
-INSERT INTO `type` VALUES ('12','Reception');
-INSERT INTO `type` VALUES ('13','Costume Party');
-INSERT INTO `type` VALUES ('14','Christmas Party');
-INSERT INTO `type` VALUES ('15','Halloween PArty');
-INSERT INTO `type` VALUES ('16','Bachlor Party');
-INSERT INTO `type` VALUES ('17','Bachlorette Party');
-INSERT INTO `type` VALUES ('18','Murder Mystery Party');
-INSERT INTO `type` VALUES ('19','Dance Party');
-INSERT INTO `type` VALUES ('20','Karoke Party');
+INSERT INTO `type` VALUES ('1','Baby Boy Shower', 'images/baby-shower-party-boy.jpg');
+INSERT INTO `type` VALUES ('2','Baby Girl Shower', 'images/baby-shower-party-girl.jpg');
+INSERT INTO `type` VALUES ('3','Gender Reveal', 'images/Baby_Shower.jpg');
+INSERT INTO `type` VALUES ('4','General Baby Shower', 'images/Baby_Shower.jpg');
+INSERT INTO `type` VALUES ('5','Birthday Party', 'images/birthday.jpg');
+INSERT INTO `type` VALUES ('6','Graduation Party', 'images/party-themes.jpg');
+INSERT INTO `type` VALUES ('7','Dinner', 'images/dinner-table.jpg');
+INSERT INTO `type` VALUES ('8','Anniversary', 'images/Wedding-Anniversary.jpg');
+INSERT INTO `type` VALUES ('9','Tea Party', 'images/tea.jpg');
+INSERT INTO `type` VALUES ('10','Garden Party', 'images/Garden-party.jpg');
+INSERT INTO `type` VALUES ('11','Cocktail Party', 'images/shutterstock.jpg');
+INSERT INTO `type` VALUES ('12','Reception', 'images/Recpetion.jpg');
+INSERT INTO `type` VALUES ('13','Costume Party', 'images/costume.jpg');
+INSERT INTO `type` VALUES ('14','Christmas Party', 'images/Christmas.jpg');
+INSERT INTO `type` VALUES ('15','Halloween PArty', 'images/halloween.jpg');
+INSERT INTO `type` VALUES ('16','Bachlor Party', 'images/shutterstock.jpg');
+INSERT INTO `type` VALUES ('17','Bachlorette Party', 'images/shutterstock.jpg');
+INSERT INTO `type` VALUES ('18','Wedding Party', 'images/wedding.jpg');
+INSERT INTO `type` VALUES ('19','Dance Party', 'images/Dance-Party.jpg');
+INSERT INTO `type` VALUES ('20','Karoke Party', 'images/karaoke.jpg');
 
 CREATE TABLE Theme
 (
   ThemeID 	int NOT NULL AUTO_INCREMENT,
   ThemeName		VARCHAR(15)	NOT NULL,
   ThemeCost 		INT 			NOT NULL,
-  ThemePicture 	LONGBLOB 		NOT NULL,
+  ThemePicture 	VARCHAR(30) 		NOT NULL,
   PRIMARY KEY (ThemeID)
 );
 
-INSERT INTO `theme` VALUES ('1','Kids', 50, '');
-INSERT INTO `theme` VALUES ('2','Friends', 100, '');
-INSERT INTO `theme` VALUES ('3','21st', 50, '');
-INSERT INTO `theme` VALUES ('4','50th', 75, '');
-INSERT INTO `theme` VALUES ('5','100th', 75, '');
-INSERT INTO `theme` VALUES ('6','Toga', 10, '');
-INSERT INTO `theme` VALUES ('7','20s', 100, '');
-INSERT INTO `theme` VALUES ('8','80s', 50, '');
-INSERT INTO `theme` VALUES ('9','90s', 30, '');
-INSERT INTO `theme` VALUES ('10','70s', 40, '');
-INSERT INTO `theme` VALUES ('11','Animal', 70, '');
-INSERT INTO `theme` VALUES ('12','Beach', 85, '');
-INSERT INTO `theme` VALUES ('13','Carnival', 35, '');
-INSERT INTO `theme` VALUES ('14','Western', 20, '');
-INSERT INTO `theme` VALUES ('15','Nautical', 90, '');
-INSERT INTO `theme` VALUES ('16','Superhero', 150, '');
-INSERT INTO `theme` VALUES ('17','Unicorn', 500, '');
-INSERT INTO `theme` VALUES ('18','Rockstar', 74, '');
-INSERT INTO `theme` VALUES ('19','New Years', 28, '');
-INSERT INTO `theme` VALUES ('20','Zombie', 94, '');
+INSERT INTO `theme` VALUES ('1','Kids', 50, 'images/Disneyhouse.jpg');
+INSERT INTO `theme` VALUES ('2','Friends', 100, 'images/night-club.jpg');
+INSERT INTO `theme` VALUES ('3','25th', 50, 'images/Wedding-Anniversary.jpg');
+INSERT INTO `theme` VALUES ('4','50th', 75, 'images/Wedding-Anniversary.jpg');
+INSERT INTO `theme` VALUES ('5','100th', 75, 'images/Wedding-Anniversary.jpg');
+INSERT INTO `theme` VALUES ('6','Graduation', 10, 'images/graduation.jpg');
+INSERT INTO `theme` VALUES ('7','20s', 100, 'images/20.jpg');
+INSERT INTO `theme` VALUES ('8','Disney', 50, 'images/disney-theme.jpg');
+INSERT INTO `theme` VALUES ('9','90s', 30, 'images/20.jpg');
+INSERT INTO `theme` VALUES ('10','70s', 40, 'images/20.jpg');
+INSERT INTO `theme` VALUES ('11','Animal', 70, 'images/animals.jpg');
+INSERT INTO `theme` VALUES ('12','Beach', 85, 'images/party-themes.jpg');
+INSERT INTO `theme` VALUES ('13','Carnival', 35, 'images/party-themes.jpg');
+INSERT INTO `theme` VALUES ('14','Western', 20, 'images/party-themes.jpg');
+INSERT INTO `theme` VALUES ('15','Nautical', 90, 'images/party-themes.jpg');
+INSERT INTO `theme` VALUES ('16','Superhero', 150, 'images/costume.jpg');
+INSERT INTO `theme` VALUES ('17','Unicorn', 500, 'images/Unicorn-Party.png');
+INSERT INTO `theme` VALUES ('18','Rockstar', 74, 'images/night-club.jpg');
+INSERT INTO `theme` VALUES ('19','New Years', 28, 'images/night-club.jpg');
+INSERT INTO `theme` VALUES ('20','Zombie', 94, 'images/halloween.jpg');
 
 CREATE TABLE Customer_Phone
 (
@@ -200,7 +201,7 @@ CREATE TABLE Party
   UNIQUE (DateTime)
 );
 
-INSERT INTO `Party` VALUES ('1', 15, '2017-12-01 07:00:00' ,'1', '1', '1', '1', '1');
+INSERT INTO `Party` VALUES ('1', 15, '2016-12-01 07:00:00' ,'1', '1', '1', '1', '1');
 INSERT INTO `Party` VALUES ('2', 350, '2017-12-02 03:00:00' ,'2', '2', '7', '11', '12');
 INSERT INTO `Party` VALUES ('3', 500, '2018-01-05 07:00:00' ,'3', '3', '15', '10', '13');
 INSERT INTO `Party` VALUES ('4', 100,'2018-04-05 07:00:00'  ,'4', '4', '2', '20', '14');
@@ -210,14 +211,14 @@ INSERT INTO `Party` VALUES ('7', 40,'2018-09-12 07:00:00' ,'7', '3', '17', '3', 
 INSERT INTO `Party` VALUES ('8', 50, '2018-10-10 07:00:00' ,'8', '4', '20', '2', '18');
 INSERT INTO `Party` VALUES ('9', 100, '2018-02-05 07:00:00' ,'9', '1', '9', '6', '17');
 INSERT INTO `Party` VALUES ('10', 30, '2018-01-04 01:00:00' ,'10', '2', '3', '8', '16');
-INSERT INTO `Party` VALUES ('11', 400,'2018-01-06 06:30:00' ,'11', '3', '13', '18', '2');
-INSERT INTO `Party` VALUES ('12', 60, '2018-03-16 07:00:00' ,'12', '4', '11', '19', '3');
+INSERT INTO `Party` VALUES ('11', 400,'2017-01-06 06:30:00' ,'1', '3', '13', '18', '2');
+INSERT INTO `Party` VALUES ('12', 60, '2018-03-16 07:00:00' ,'2', '4', '11', '19', '3');
 INSERT INTO `Party` VALUES ('13', 70, '2014-12-20 07:00:00' ,'13', '1', '15', '13', '4');
 INSERT INTO `Party` VALUES ('14', 150, '2018-03-11 07:00:00' ,'14', '2', '12', '20', '5');
 INSERT INTO `Party` VALUES ('15', 75,'2018-10-08 04:15:00' ,'5', '3', '20', '14', '6');
 INSERT INTO `Party` VALUES ('16', 45, '2018-02-25 07:00:00' ,'16', '4', '7', '13', '7');
 INSERT INTO `Party` VALUES ('17', 500, '2018-01-30 07:00:00' ,'17', '1', '6', '9', '8');
-INSERT INTO `Party` VALUES ('18', 530, '2018-08-31 07:00:00' ,'18', '2', '15', '15', '9');
+INSERT INTO `Party` VALUES ('18', 530, '2018-02-31 07:00:00' ,'1', '2', '15', '15', '9');
 INSERT INTO `Party` VALUES ('19', 80, '2017-12-10 07:00:00' ,'19', '3', '17', '19', '10');
 INSERT INTO `Party` VALUES ('20', 20, '2018-10-05 07:00:00' ,'20', 'PL4', 'P5', '12', '11');
 
