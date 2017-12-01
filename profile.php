@@ -25,7 +25,7 @@ header {
     font-style: italic;
     text-align:center;
     text-decoration-color:black;
-	background: url(p.jpg);
+	background: url(images/p.jpg);
 
     
 }
@@ -37,7 +37,7 @@ header {
     clear: left;
     text-align:center;
     text-decoration-color:black;
-	background: url(p.jpg);
+	background: url(images/p.jpg);
 
     
 }
@@ -64,7 +64,7 @@ article {
     padding: 2em;
     overflow: hidden;
     color:PaleVioletRed;
-	text-align: center;
+	text-align: left;
    
 }
 </style>
@@ -79,6 +79,7 @@ article {
   
 <nav>
   <ul>
+    <li><a href="Home.php">Home</a></li>
     <li><a href="logout.php">Log Out</a></li>
 
   </ul>
@@ -108,25 +109,20 @@ $sql = "SELECT customer.CustomerFName, customer.CustomerLName, customer.email, c
      
 $result = $varConn->query($sql);     
 if ($result->num_rows > 0) {
-    echo "<table border='1' >";
-            echo "<tr>";
-                echo "<th>First Name</th>";
-                echo "<th>Last Name</th>";
-                echo "<th>Email</th>";
-                echo "<th>Phone</th>";
     
-            echo "</tr>";
-
- while($row = mysqli_fetch_array($result)) {
-            echo "<tr>";
-                echo "<td>" . $row['CustomerFName'] . "</td>";
-                echo "<td>" . $row['CustomerLName'] . "</td>";
-                echo "<td>" . $row['email'] . "</td>";
-                echo "<td>" . $row['Phone'] . "</td>";
-            echo "</tr>";
+            while($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "First Name :  " . "<td>" . $row['CustomerFName'] ."</td>" . "<br>".
+                    "Last Name : " . "<td>" . $row['CustomerLName'] . "</td>" . "<br>".
+                    "Email : " . "<td>"  . $row['email'] . "</td>" . "<br>".
+                    
+                    "Phone : " . "<td>"  . $row['Phone'] .  "</td>" . "<br>";
+                echo "</tr>";
         }
-     echo "</table>";
-    }
+
+
+}
+
  else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($varConn);
 }
