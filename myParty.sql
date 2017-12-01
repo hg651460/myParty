@@ -40,26 +40,26 @@ CREATE TABLE Place
   PRIMARY KEY (PlaceID)
 );
 
-INSERT INTO `place` VALUES ('','4 Crystal Court','House','Sicklerville', 15, 5, 40);
-INSERT INTO `place` VALUES ('','2801 Pacific Avenue','Cuba Libre Resturant','Alantic City', 450, 100, 165);
-INSERT INTO `place` VALUES ('','84 S Lansdowne Avenue','Twentieth Century Club','Lansdowne', 175, 10, 70);
-INSERT INTO `place` VALUES ('','2019 S Juniper St','InterCut Studios','Philadelphia', 100, 30, 75);
-INSERT INTO `place` VALUES ('','212 Centre Street','The Gables','Beach Haven', 125 ,5, 40);
-INSERT INTO `place` VALUES ('','1625 Cecil B Moore Avenue','TLO Event Coimplex','Philadelphia', 500, 300, 500);
-INSERT INTO `place` VALUES ('','2373 Hwy 9','Versailles Ballroom','Toms River', 400, 100, 60);
-INSERT INTO `place` VALUES ('','2 Rector Street','Bourbon Blue Resturant','Philadelphia', 150, 70, 85);
-INSERT INTO `place` VALUES ('','PO Box 2234 19073','The Ballroom at Westside','West Chester', 250, 30, 55);
-INSERT INTO `place` VALUES ('','1324 Locust Street','Arts Ballroom','Philadelphia', 400, 200, 100);
-INSERT INTO `place` VALUES ('','2715 E Allegheny Ave','Lithuanian Music Hall','Philadelphia', 250, 45, 40);
-INSERT INTO `place` VALUES ('','4809 Germantown Avenue','The Victorian Banquet Hall','Philadelphia', 300, 85, 1250);
-INSERT INTO `place` VALUES ('','399 Monmouth St','Windsor Ballroom','Hightstown', 400, 55, 60);
-INSERT INTO `place` VALUES ('','48 Country Club Road','Spring Ford Country Club','Royersford', 240, 75, 10);
-INSERT INTO `place` VALUES ('','401 S. Columbus Blvd','Entertainment Cruises Philadelphia','Philadelphia', 530, 5, 46);
-INSERT INTO `place` VALUES ('','760 Langhorne Newtown Road','Bridgetown Mill House','Langhorne', 150, 5, 35);
-INSERT INTO `place` VALUES ('','707 East Lancaster Ave','Sheraton Great Valley','Malvern', 200, 5, 40);
-INSERT INTO `place` VALUES ('','191 S. Newtown Street Road','Teca Restaurant & Wine Bar','Newtown Square', 200, 5, 40);
-INSERT INTO `place` VALUES ('','111 South 17th Street','1925 Lounge','Philadelphia', 350, 100, 80);
-INSERT INTO `place` VALUES ('','1445 East Schuylkill Road','Giannis Event Venue','Pottstown', 120, 15, 24);
+INSERT INTO `place` VALUES ('1','4 Crystal Court','House','Sicklerville', 15, 5, 40);
+INSERT INTO `place` VALUES ('2','2801 Pacific Avenue','Cuba Libre Resturant','Alantic City', 450, 100, 165);
+INSERT INTO `place` VALUES ('3','84 S Lansdowne Avenue','Twentieth Century Club','Lansdowne', 175, 10, 70);
+INSERT INTO `place` VALUES ('4','2019 S Juniper St','InterCut Studios','Philadelphia', 100, 30, 75);
+INSERT INTO `place` VALUES ('5','212 Centre Street','The Gables','Beach Haven', 125 ,5, 40);
+INSERT INTO `place` VALUES ('6','1625 Cecil B Moore Avenue','TLO Event Coimplex','Philadelphia', 500, 300, 500);
+INSERT INTO `place` VALUES ('7','2373 Hwy 9','Versailles Ballroom','Toms River', 400, 100, 60);
+INSERT INTO `place` VALUES ('8','2 Rector Street','Bourbon Blue Resturant','Philadelphia', 150, 70, 85);
+INSERT INTO `place` VALUES ('9','PO Box 2234 19073','The Ballroom at Westside','West Chester', 250, 30, 55);
+INSERT INTO `place` VALUES ('10','1324 Locust Street','Arts Ballroom','Philadelphia', 400, 200, 100);
+INSERT INTO `place` VALUES ('11','2715 E Allegheny Ave','Lithuanian Music Hall','Philadelphia', 250, 45, 40);
+INSERT INTO `place` VALUES ('12','4809 Germantown Avenue','The Victorian Banquet Hall','Philadelphia', 300, 85, 1250);
+INSERT INTO `place` VALUES ('13','399 Monmouth St','Windsor Ballroom','Hightstown', 400, 55, 60);
+INSERT INTO `place` VALUES ('14','48 Country Club Road','Spring Ford Country Club','Royersford', 240, 75, 10);
+INSERT INTO `place` VALUES ('15','401 S. Columbus Blvd','Entertainment Cruises Philadelphia','Philadelphia', 530, 5, 46);
+INSERT INTO `place` VALUES ('16','760 Langhorne Newtown Road','Bridgetown Mill House','Langhorne', 150, 5, 35);
+INSERT INTO `place` VALUES ('17','707 East Lancaster Ave','Sheraton Great Valley','Malvern', 200, 5, 40);
+INSERT INTO `place` VALUES ('18','191 S. Newtown Street Road','Teca Restaurant & Wine Bar','Newtown Square', 200, 5, 40);
+INSERT INTO `place` VALUES ('19','111 South 17th Street','1925 Lounge','Philadelphia', 350, 100, 80);
+INSERT INTO `place` VALUES ('20','1445 East Schuylkill Road','Giannis Event Venue','Pottstown', 120, 15, 24);
 
 CREATE TABLE Type
 (
