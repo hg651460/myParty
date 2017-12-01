@@ -26,7 +26,7 @@ header {
     font-style: italic;
     text-align:center;
     text-decoration-color:black;
-	background: url(p.jpg);
+	background: url(images/p.jpg);
 
     
 }
@@ -38,7 +38,7 @@ header {
     clear: left;
     text-align:center;
     text-decoration-color:black;
-	background: url(p.jpg);
+	background: url(images/p.jpg);
 
     
 }
@@ -81,9 +81,9 @@ article {
 <nav>
   <ul>
     <li><a href="Home.php">Home</a></li>
-    <li><a href="logout.php">Log Out</a></li>
-    <li><a href="reservePlace.php">Reserve</a></li>
+    <li><a href="BookingForm.php">Reserve a place</a></li>
     <li><a href="profile.php">Profile</a></li>
+    <li><a href="logout.php">Log Out</a></li>
 
   </ul>
 </nav>
