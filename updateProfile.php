@@ -1,9 +1,9 @@
 
-    <?php
-    include('session.php');
-    ?>
+<?php
+include('session.php');
+?>
 
-    <!DOCTYPE html>
+ <!DOCTYPE html>
     <html>
     <head>
 
@@ -12,8 +12,6 @@
         width: 100%;
       
     }
-
-
 
     header {
         padding: 1em;
@@ -82,12 +80,10 @@
        
     }
     </style>
-
-
     </head>
     <body>
 
-<form name="update" method="get" action="updateProfile.php" >
+<form name="update" method="get" >
 
     <div class="container">
 
@@ -98,14 +94,15 @@
     <nav>
       <ul>
         <li><a href="Home.php">Home</a></li>
-        <li><a href="customerView.php">Your Account</a></li>
+        <li><a href="customerView.php"> Account</a></li>
+        <li><a href="profile.php"> Profile</a></li>
         <li><a href="logout.php">Log Out</a></li>
 
       </ul>
     </nav>
 
     <article>
-    <h1> Your Profile </h1>
+    <h1> Your profile is updated </h1>
     </br>
     
 <div>
@@ -117,6 +114,22 @@
         {
             die('Could not connect: ' . mysql_error());
         }
+
+
+    $varUser = $_GET["email"];
+    $varPass = $_GET["pass"];
+
+                $q = "UPDATE logininfo SET password = '$varPass' WHERE email = '$varUser' ";
+                $rst = $varConn->query($q);
+                if ($rst===true) {
+               
+                $message = "Password Changed";
+              }                      
+
+    			else{
+           			 echo "ERROR: Could not able to execute $sql. " . mysqli_error($varConn);
+        		}
+
          
     $user_check = $_SESSION['login_user'];    
     $sql = "SELECT customer.CustomerFName, customer.CustomerLName, customer.email, customer_phone.Phone, logininfo.password
@@ -143,15 +156,11 @@
                     echo "</tr>";
 
                     echo "<tr>";
-                    echo "<td>" ."Email Address : " ."</td>" . "<td>" . '<input type="email" name = "email" value="' . $row['email'] . '">'."</td>";
+                    echo "<td>" ."Email Address : " ."</td>" . "<td>" . '<input type="email" value="' . $row['email'] . '">'."</td>";
                     echo "</tr>";
 
                     echo "<tr>";
                     echo "<td>" ."Password  : " ."</td>" . "<td>" . '<input type="password" value="' . $row['password'] . '">' . "</td>";
-                    echo "</tr>";
-
-                    echo "<tr>";
-                    echo "<td>" ."Confirm Password : " ."</td>" . "<td>" . '<input type="password" name = "pass" value="'  . $row['password'] . '">' . "</td>";
                     echo "</tr>";
 
                     echo "<tr>";
@@ -177,18 +186,13 @@
      </div>
 
 
-     <div>
-    <input class="button" type="submit" name="submit" value="Update">
-    </div>
-
     </article>
 
 
     <footer>Copyright &copy; MyParty.com </footer>
 
     </div>
-
-
-   
     </body>
     </html>
+
+
