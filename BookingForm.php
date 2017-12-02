@@ -76,24 +76,7 @@ text-align:center;
         Select a Date: <input type="date" name="Date" ><br><br>
         
         Select a Time: <input type="time" name="Time">
-        
-        Location: <select name="place">
-            <?
-            $sql="Select p.PlaceName 
-                    from Place p, party a
-                    Where p.placeID=a.placeID AND 
-                    a.date =! '' AND
-                    a.time =! ''
-                    "
-            $q=mysql_query($sql)
-            echo "<select name= 'type' >"; 
-                while($row = mysql_fetch_array($q)) {        
-                echo "<option value='".$row['TypeName']."'>".$row['TypeName']."</option>"; 
-                }
-            echo "</select>";
-            ?>
-        
-       
+
         Type: <select name="type">
             <?
             $sql="Select TypeName from type"
