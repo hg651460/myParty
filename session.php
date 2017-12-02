@@ -5,6 +5,8 @@
    
    $user_check = $_SESSION['login_user'];
    
+   $db = Connect();
+
    $ses_sql = mysqli_query($db,"select email from logininfo where email = '$user_check' ");
    
    $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
