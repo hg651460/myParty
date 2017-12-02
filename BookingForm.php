@@ -69,7 +69,7 @@ text-align:center;
 
 <article>
 
-        <form action= >
+        <form action= "bookthis.php" method="post">
        
         Number of Guest: <input type= "text" name="NoOfGuests"><br>
         
@@ -92,8 +92,7 @@ text-align:center;
                 }
             echo "</select>";
             ?>
-         cross with time, date, place, and number of guest, so that it is availble
-            use party table
+        
        
         Type: <select name="type">
             <?
