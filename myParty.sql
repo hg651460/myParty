@@ -65,30 +65,29 @@ CREATE TABLE Type
 (
   TypeID 	int NOT NULL AUTO_INCREMENT,
   TypeName 	VARCHAR(30)	 NOT NULL,
-  TypePicture  VARCHAR(30)     NOT NULL,
   PRIMARY KEY (TypeID)
 );
 
-INSERT INTO `type` VALUES ('1','Baby Boy Shower', 'images/baby-shower-party-boy.jpg');
-INSERT INTO `type` VALUES ('2','Baby Girl Shower', 'images/baby-shower-party-girl.jpg');
-INSERT INTO `type` VALUES ('3','Gender Reveal', 'images/Baby_Shower.jpg');
-INSERT INTO `type` VALUES ('4','General Baby Shower', 'images/Baby_Shower.jpg');
-INSERT INTO `type` VALUES ('5','Birthday Party', 'images/birthday.jpg');
-INSERT INTO `type` VALUES ('6','Graduation Party', 'images/party-themes.jpg');
-INSERT INTO `type` VALUES ('7','Dinner', 'images/dinner-table.jpg');
-INSERT INTO `type` VALUES ('8','Anniversary', 'images/Wedding-Anniversary.jpg');
-INSERT INTO `type` VALUES ('9','Tea Party', 'images/tea.jpg');
-INSERT INTO `type` VALUES ('10','Garden Party', 'images/Garden-party.jpg');
-INSERT INTO `type` VALUES ('11','Cocktail Party', 'images/shutterstock.jpg');
-INSERT INTO `type` VALUES ('12','Reception', 'images/Recpetion.jpg');
-INSERT INTO `type` VALUES ('13','Costume Party', 'images/costume.jpg');
-INSERT INTO `type` VALUES ('14','Christmas Party', 'images/Christmas.jpg');
-INSERT INTO `type` VALUES ('15','Halloween PArty', 'images/halloween.jpg');
-INSERT INTO `type` VALUES ('16','Bachlor Party', 'images/shutterstock.jpg');
-INSERT INTO `type` VALUES ('17','Bachlorette Party', 'images/shutterstock.jpg');
-INSERT INTO `type` VALUES ('18','Wedding Party', 'images/wedding.jpg');
-INSERT INTO `type` VALUES ('19','Dance Party', 'images/Dance-Party.jpg');
-INSERT INTO `type` VALUES ('20','Karoke Party', 'images/karaoke.jpg');
+INSERT INTO `type` VALUES ('1','Baby Boy Shower');
+INSERT INTO `type` VALUES ('2','Baby Girl Shower');
+INSERT INTO `type` VALUES ('3','Gender Reveal');
+INSERT INTO `type` VALUES ('4','General Baby Shower');
+INSERT INTO `type` VALUES ('5','Birthday Party');
+INSERT INTO `type` VALUES ('6','Graduation Party');
+INSERT INTO `type` VALUES ('7','Dinner');
+INSERT INTO `type` VALUES ('8','Anniversary');
+INSERT INTO `type` VALUES ('9','Tea Party');
+INSERT INTO `type` VALUES ('10','Garden Party');
+INSERT INTO `type` VALUES ('11','Cocktail Party');
+INSERT INTO `type` VALUES ('12','Reception');
+INSERT INTO `type` VALUES ('13','Costume Party');
+INSERT INTO `type` VALUES ('14','Christmas Party');
+INSERT INTO `type` VALUES ('15','Halloween PArty');
+INSERT INTO `type` VALUES ('16','Bachlor Party');
+INSERT INTO `type` VALUES ('17','Bachlorette Party');
+INSERT INTO `type` VALUES ('18','Wedding Party');
+INSERT INTO `type` VALUES ('19','Dance Party');
+INSERT INTO `type` VALUES ('20','Karoke Party');
 
 CREATE TABLE Theme
 (
@@ -186,7 +185,8 @@ CREATE TABLE Party
 (
   PartyID	 int NOT NULL AUTO_INCREMENT,
   NoOfGuests	 INT 		NOT NULL,
-  DateTime 	DATETIME 	 NOT NULL,
+  Date 	DATE 	 NOT NULL,
+  Time  TIME      NOT NULL,
   CustomerId 	int NOT NULL ,
   PlannerID	int NOT NULL ,
   PlaceID	 int NOT NULL ,
@@ -198,29 +198,29 @@ CREATE TABLE Party
   FOREIGN KEY (PlaceID) REFERENCES Place(PlaceID),
   FOREIGN KEY (TypeID) REFERENCES Type(TypeID),
   FOREIGN KEY (ThemeID) REFERENCES Theme(ThemeID),
-  UNIQUE (DateTime)
+  UNIQUE (Date, Time)
 );
 
-INSERT INTO `Party` VALUES ('1', 15, '2016-12-01 07:00:00' ,'1', '1', '1', '1', '1');
-INSERT INTO `Party` VALUES ('2', 350, '2017-12-02 03:00:00' ,'2', '2', '7', '11', '12');
-INSERT INTO `Party` VALUES ('3', 500, '2018-01-05 07:00:00' ,'3', '3', '15', '10', '13');
-INSERT INTO `Party` VALUES ('4', 100,'2018-04-05 07:00:00'  ,'4', '4', '2', '20', '14');
-INSERT INTO `Party` VALUES ('5', 30, '2018-06-04 03:30:00' ,'5', '1', '4', '12', '15');
-INSERT INTO `Party` VALUES ('6', 200, '2018-01-06 04:15:00' ,'6', '2', '10', '5', '20');
-INSERT INTO `Party` VALUES ('7', 40,'2018-09-12 07:00:00' ,'7', '3', '17', '3', '19');
-INSERT INTO `Party` VALUES ('8', 50, '2018-10-10 07:00:00' ,'8', '4', '20', '2', '18');
-INSERT INTO `Party` VALUES ('9', 100, '2018-02-05 07:00:00' ,'9', '1', '9', '6', '17');
-INSERT INTO `Party` VALUES ('10', 30, '2018-01-04 01:00:00' ,'10', '2', '3', '8', '16');
-INSERT INTO `Party` VALUES ('11', 400,'2017-01-06 06:30:00' ,'1', '3', '13', '18', '2');
-INSERT INTO `Party` VALUES ('12', 60, '2018-03-16 07:00:00' ,'2', '4', '11', '19', '3');
-INSERT INTO `Party` VALUES ('13', 70, '2014-12-20 07:00:00' ,'13', '1', '15', '13', '4');
-INSERT INTO `Party` VALUES ('14', 150, '2018-03-11 07:00:00' ,'14', '2', '12', '20', '5');
-INSERT INTO `Party` VALUES ('15', 75,'2018-10-08 04:15:00' ,'5', '3', '20', '14', '6');
-INSERT INTO `Party` VALUES ('16', 45, '2018-02-25 07:00:00' ,'16', '4', '7', '13', '7');
-INSERT INTO `Party` VALUES ('17', 500, '2018-01-30 07:00:00' ,'17', '1', '6', '9', '8');
-INSERT INTO `Party` VALUES ('18', 530, '2018-02-31 07:00:00' ,'1', '2', '15', '15', '9');
-INSERT INTO `Party` VALUES ('19', 80, '2017-12-10 07:00:00' ,'19', '3', '17', '19', '10');
-INSERT INTO `Party` VALUES ('20', 20, '2018-10-05 07:00:00' ,'20', 'PL4', 'P5', '12', '11');
+INSERT INTO `Party` VALUES ('1', 15, '2016-12-01', '07:00:00' ,'1', '1', '1', '1', '1');
+INSERT INTO `Party` VALUES ('2', 350, '2017-12-02', ' 03:00:00' ,'2', '2', '7', '11', '12');
+INSERT INTO `Party` VALUES ('3', 500, '2018-01-05', ' 07:00:00' ,'3', '3', '15', '10', '13');
+INSERT INTO `Party` VALUES ('4', 100,'2018-04-05', ' 07:00:00'  ,'4', '4', '2', '20', '14');
+INSERT INTO `Party` VALUES ('5', 30, '2018-06-04', ' 03:30:00' ,'5', '1', '4', '12', '15');
+INSERT INTO `Party` VALUES ('6', 200, '2018-01-06', ' 04:15:00' ,'6', '2', '10', '5', '20');
+INSERT INTO `Party` VALUES ('7', 40,'2018-09-12', ' 07:00:00' ,'7', '3', '17', '3', '19');
+INSERT INTO `Party` VALUES ('8', 50, '2018-10-10', ' 07:00:00' ,'8', '4', '20', '2', '18');
+INSERT INTO `Party` VALUES ('9', 100, '2018-02-05', ' 07:00:00' ,'9', '1', '9', '6', '17');
+INSERT INTO `Party` VALUES ('10', 30, '2018-01-04', ' 01:00:00' ,'10', '2', '3', '8', '16');
+INSERT INTO `Party` VALUES ('11', 400,'2017-01-06', ' 06:30:00' ,'1', '3', '13', '18', '2');
+INSERT INTO `Party` VALUES ('12', 60, '2018-03-16', ' 07:00:00' ,'2', '4', '11', '19', '3');
+INSERT INTO `Party` VALUES ('13', 70, '2014-12-20', ' 07:00:00' ,'13', '1', '15', '13', '4');
+INSERT INTO `Party` VALUES ('14', 150, '2018-03-11', ' 07:00:00' ,'14', '2', '12', '20', '5');
+INSERT INTO `Party` VALUES ('15', 75,'2018-10-08', ' 04:15:00' ,'5', '3', '20', '14', '6');
+INSERT INTO `Party` VALUES ('16', 45, '2018-02-25', ' 07:00:00' ,'16', '4', '7', '13', '7');
+INSERT INTO `Party` VALUES ('17', 500, '2018-01-30', ' 07:00:00' ,'17', '1', '6', '9', '8');
+INSERT INTO `Party` VALUES ('18', 530, '2018-02-31', ' 07:00:00' ,'1', '2', '15', '15', '9');
+INSERT INTO `Party` VALUES ('19', 80, '2017-12-10', ' 07:00:00' ,'19', '3', '17', '19', '10');
+INSERT INTO `Party` VALUES ('20', 20, '2018-10-05', ' 07:00:00' ,'20', 'PL4', 'P5', '12', '11');
 
 
 CREATE TABLE LogInInfo
