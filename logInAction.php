@@ -40,8 +40,9 @@ if ($result->num_rows > 0) {
         
         print ("</table>");
     }
-    else{
-        print("Wrong Password or username");
+     else{
+        header('Refresh: 2;url=logIn.html');
+        print("Wrong Password or username..PLEASE  Log In Again ");
     }
     
     $varConn->close();
