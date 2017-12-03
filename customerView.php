@@ -103,7 +103,22 @@ article {
         die('Could not connect: ' . mysql_error());
     }
      
-$user_check = $_SESSION['login_user'];    
+$user_check = $_SESSION['login_user']; 
+ 
+/*$q = "SELECT party.CustomerId
+       From party, customer
+       where party.CustomerId = customer.CustomerId
+       Limit 1";
+      
+$R = $varConn->query($q);     
+if ($R->num_rows < 0) { 
+    
+  // header('Refresh: 4;url=profile.php');
+ //  print("You have Zero Orders to view ..you will be directed to your profile ");  
+    echo "<h1>You have Zero Orders to view </h1>";
+}*/
+     
+     
 $sql = "SELECT place.PlaceName, type.TypeName, theme.ThemeName, party.NoOfGuests, party.DateTime, customer.email
         From  party, place, theme, type, customer
         WHERE party.CustomerID=customer.CustomerId 
@@ -138,16 +153,22 @@ if ($result->num_rows > 0) {
      echo "</table>";
     }
  else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($varConn);
+    print("You have Zero Orders to view ..you can order one from the reserve link ");
+   // echo "ERROR: Could not able to execute $sql. " . mysqli_error($varConn);
 }
-
+     
 $varConn->close();
 
-?> 
+?>  
  </div>  
 </article>
 
-<footer>Copyright &copy; MyParty.com </footer>
+<footer> <script type="text/javascript">
+        
+        var today = new Date();
+        document.writeln( today.getFullYear() );
+    
+      </script>Copyright &copy; MyParty.com </footer>
 
 </div>
 
