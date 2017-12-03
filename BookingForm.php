@@ -77,11 +77,42 @@
       
 <article>
 
-        <form action= >
+       <form action= "bookthislocation.php" method="post">
        <table border="0">
-       <tr><td> Party type: </td><td><input type= "text" name="Type"></td></tr>
+       <tr><td> Party type: </td><td>
+	       <select class="form-dropdown" style="width:150px" id="input_5" name="q5_listOf">
+		<?php
+			require 'conn.php';
+			$filter=mysql_query("select ThemeName from theme");
+			$menu=" ";
+			// Add options to the drop down
+			while($row = mysql_fetch_array($filter)){
+ 			$menu .="<option>" . $row['ThemeName'] . "</option>";
+			}
+			// Close menu form
+			$menu = "</select></form>";
+			// Output dropdown menu
+			echo $menu;
+		?>
+		</select></td></tr>
           
-       <tr><td> Party theme: </td><td> <input type= "text" name="Theme"></td></tr>
+       <tr><td> Party theme: </td><td> 
+	       <select class="form-dropdown" style="width:150px" id="input_5" name="q5_listOf">
+		<?php
+			require 'conn.php';
+			$filter=mysql_query("select ThemeName from theme");
+			$menu=" ";
+			// Add options to the drop down
+			while($row = mysql_fetch_array($filter)){
+ 			$menu .="<option>" . $row['ThemeName'] . "</option>";
+			}
+			// Close menu form
+			$menu = "</select></form>";
+			// Output dropdown menu
+			echo $menu;
+		?>
+		</select>
+	       </td></tr>
 
        <tr><td> Number of Guest: </td><td> <input type= "text" name="NoOfGuests"></td></tr>
         
@@ -89,24 +120,7 @@
         
        <tr><td> Select a Time: </td><td> <input type="time" name="Time"></td></tr>
         
-       <tr><td> Location: </td><td> <select name="place">
-            <?
-            $sql="Select p.PlaceName 
-                    from Place p, party a
-                    Where p.placeID=a.placeID AND 
-                    a.date =! '' AND
-                    a.time =! ''
-                    "
-            $q=mysql_query($sql)
-            echo "<select name= 'type' >"; 
-                while($row = mysql_fetch_array($q)) {        
-                echo "<option value='".$row['TypeName']."'>".$row['TypeName']."</option>"; 
-                }
-            echo "</select>";
-            ?>
-<!--          cross with time, date, place, and number of guest, so that it is availble
-            use party table -->
-       </td></tr></br>
+  	<br></br>
            </table>
         
         <div >
