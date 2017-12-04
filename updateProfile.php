@@ -23,7 +23,7 @@ include('session.php');
         font-style: italic;
         text-align:center;
         text-decoration-color:black;
-    	background: url(images/p.jpg);
+    	background: url(p.jpg);
 
         
     }
@@ -35,7 +35,7 @@ include('session.php');
         clear: left;
         text-align:center;
         text-decoration-color:black;
-    	background: url(images/p.jpg);
+    	background: url(p.jpg);
 
         
     }
@@ -127,7 +127,7 @@ include('session.php');
               }                      
 
     			else{
-           			 echo "ERROR: Could not able to execute $sql. " . mysqli_error($varConn);
+           			 echo "Could not update your password at this time.<br> Please try again later.<br> " . mysqli_error($varConn);
         		}
 
          

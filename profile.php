@@ -25,7 +25,7 @@
         font-style: italic;
         text-align:center;
         text-decoration-color:black;
-    	background: url(images/p.jpg);
+    	background: url(p.jpg);
 
         
     }
@@ -37,7 +37,7 @@
         clear: left;
         text-align:center;
         text-decoration-color:black;
-    	background: url(images/p.jpg);
+    	background: url(p.jpg);
 
         
     }
@@ -98,7 +98,7 @@
     <nav>
       <ul>
         <li><a href="Home.php">Home</a></li>
-        <li><a href="customerView.php">Your Account</a></li>
+        <li><a href="customerView.php"> Account</a></li>
         <li><a href="logout.php">Log Out</a></li>
 
       </ul>
