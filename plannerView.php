@@ -86,12 +86,11 @@ article {
   </ul>
 </nav>
 
+<h1 ><b> <center> <font color="#b1871b "> Planner View </font></center></b></h1>
 <article>
-<h1>Welcome    "  <?php echo $_SESSION ['login_user'];  ?> " </h1>
-</br>
+<h1>Welcome    "  <?php echo $_SESSION ['login_user'];  ?> "    to your view</h1>
 <p> Your List of customers and their party orders : </p>
-<div>  
-
+ <div>  
 <?php
  
 
@@ -104,12 +103,8 @@ article {
 $user_check = $_SESSION['login_user'];    
 $sql = "SELECT party.PlannerID, party.PartyID, party.NoOfGuests, party.DateTime, customer.CustomerFName, customer.CustomerLName, place.PlaceName, type.TypeName, theme.ThemeName ,planner.PlannerEmail
         From  party, customer, place, theme, type, planner
-        WHERE party.CustomerID = customer.CustomerId 
-        	  AND party.PlaceID = place.PlaceID 
-        	  AND party.ThemeID = theme.ThemeID 
-              AND party.TypeID = type.TypeID 
-              AND party.PlannerID = planner.PlannerID 
-              AND planner.PlannerEmail ='$user_check' ";  
+        WHERE party.CustomerID=customer.CustomerId AND party.PlaceID=place.PlaceID AND party.ThemeID=theme.ThemeID 
+               AND party.TypeID=type.TypeID AND party.PlannerID = planner.PlannerID AND planner.PlannerEmail='$user_check' ";  
      
     
      
@@ -142,6 +137,7 @@ if ($result->num_rows > 0) {
      echo "</table>";
     }
  else{
+    header('Refresh: 5;url=Home.html');
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($varConn);
 }
 
@@ -151,7 +147,12 @@ $varConn->close();
  </div>  
 </article>
 
-<footer>Copyright &copy; MyParty.com </footer>
+<footer><script type="text/javascript">
+        
+        var today = new Date();
+        document.writeln( today.getFullYear() );
+    
+      </script>Copyright &copy; MyParty.com </footer>
 
 </div>
 
