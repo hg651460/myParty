@@ -19,7 +19,7 @@
 	   //validate password   ( OK  )
 		var pass=document.getElementById('password');
         var passw=  /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,20}$/;
-        var isEmail = document.getElementById('email')
+        var isEmail = document.getElementById('email');
         var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
          
 		if (pass.value.length == 0) 
@@ -44,8 +44,8 @@
 	   
 		//validate email ( NOT OK)
     	
-       /*
        
+       /*
        
        //validate email 
     	var isEmail = document.getElementById('email')
@@ -77,6 +77,28 @@
 	}//end outer function
         
    </script>
+    <script>
+        function num(){
+            $myNum=document.getElementById('inp1').value;
+            
+              console.log($myNum);
+              $rg = new RegExp("^[0-9]{10}$");  //^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$
+              
+              if($myNum!=""){
+                  if ($rg.test($myNum))
+                  { 
+                      document.getElementById('sp1').innerHTML="";
+                  }
+              else
+                  {
+                      //console.log('Age NOT OK--> Only numbers');
+                      document.getElementById('sp1').innerHTML="ERoRR...!!!  phone number must be 10 digits valid number";
+                      document.getElementById('inp1').value="";
+                      document.getElementById('inp1').focus();
+                  }
+              }
+        }
+    </script>
     
 <style>
 div.container {
@@ -210,10 +232,10 @@ input[type=text], input[type=password] {
 		<input id="Lname" placeholder="Last Name" class="input" name="Lname" type="text" value="" required><br />
     
         <label for="phone">phone number:</label><br />
-		<input id="phone" class="input" name="phone" type="text" value=""placeholder="0000000000" maxlength="10" required><br />
+         <input type="tel" onblur="num();" id="inp1" placeholder="0000000000" required/><span id="sp1"></span><br>
 	
 		<label for="email">Email:</label><br />
-		<input id="email" placeholder="example@example.com" class="input" name="email" type="text" value="" required ><span id="EmailError"></span><br />
+		<input id="email" placeholder="example@example.com" class="input" name="email" type="email" value="" required ><span id="EmailError"></span><br />
 		<label>Password</label><br />
 		<input type="password" placeholder="Enter Password" id="password" name="psw" required><span id="passwordError"> </span>  
     
