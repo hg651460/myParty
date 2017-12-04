@@ -81,7 +81,7 @@ article {
 <nav>
   <ul>
     <li><a href="Home.php">Home</a></li>
-    <li><a href="BookingForm.php">Reserve a place, Plan a party</a></li>
+    <li><a href="BookingForm.php">Reserve a place for party</a></li>
     <li><a href="profile.php">Profile</a></li>
     <li><a href="logout.php">Log Out</a></li>
 
@@ -105,30 +105,14 @@ article {
     }
      
 $user_check = $_SESSION['login_user']; 
- 
-/*$q = "SELECT party.CustomerId
-       From party, customer
-       where party.CustomerId = customer.CustomerId
-       Limit 1";
-      
-$R = $varConn->query($q);     
-if ($R->num_rows < 0) { 
-    
-  // header('Refresh: 4;url=profile.php');
- //  print("You have Zero Orders to view ..you will be directed to your profile ");  
-    echo "<h1>You have Zero Orders to view </h1>";
-}*/
      
-     
-$sql = "SELECT place.PlaceName, type.TypeName, theme.ThemeName, party.NoOfGuests, party.DateTime, customer.email
+$sql = "SELECT place.PlaceName, type.TypeName, theme.ThemeName, party.NoOfGuests, party.Date, party.Time, customer.email
         From  party, place, theme, type, customer
         WHERE party.CustomerID=customer.CustomerId 
                 AND party.PlaceID=place.PlaceID 
                 AND party.ThemeID=theme.ThemeID 
                 AND party.TypeID=type.TypeID 
                 AND customer.email='$user_check' ";  
-     
-    
      
 $result = $varConn->query($sql);     
 if ($result->num_rows > 0) {
@@ -138,7 +122,8 @@ if ($result->num_rows > 0) {
                 echo "<th>Party Type </th>";
                 echo "<th>Theme </th>";
                 echo "<th>Number of guests</th>";
-                echo "<th>Date and Time</th>";
+                echo "<th>Date</th>";
+                echo "<th>Time</th>";
 
     
             echo "</tr>";
@@ -148,13 +133,13 @@ if ($result->num_rows > 0) {
                 echo "<td>" . $row['TypeName'] . "</td>";
                 echo "<td>" . $row['ThemeName'] . "</td>";
                 echo "<td>" . $row['NoOfGuests'] . "</td>";
-                echo "<td>" . $row['DateTime'] . "</td>";
+                echo "<td>" . $row['Date'] . "</td>";
+                echo "<td>" . $row['Time'] . "</td>";
             echo "</tr>";
         }
      echo "</table>";
-    }
- else{
-    print("You have Zero Orders to view ..you can order one from the reserve link ");
+    } else{
+    print("You have Zero Orders to view ..you can place order from the reserve link ");
    // echo "ERROR: Could not able to execute $sql. " . mysqli_error($varConn);
 }
      

@@ -112,7 +112,7 @@ article {
     }
      
 $user_check = $_SESSION['login_user'];    
-$sql = 'SELECT planner.PlannerID, planner.PlannerFName, planner.PlannerLName, party.PartyID, party.NoOfGuests, party.DateTime, customer.CustomerFName,    customer.CustomerLName, place.PlaceName, type.TypeName, theme.ThemeName 
+$sql = 'SELECT planner.PlannerID, planner.PlannerFName, planner.PlannerLName, party.PartyID, party.NoOfGuests, party.Date, party.Time, customer.CustomerFName, customer.CustomerLName, place.PlaceName, type.TypeName, theme.ThemeName 
         From  party, customer, place, theme, type, planner
         WHERE party.CustomerID=customer.CustomerId AND party.PlaceID=place.PlaceID AND party.ThemeID=theme.ThemeID 
                AND party.TypeID=type.TypeID AND party.PlannerID=planner.PlannerID';
@@ -122,15 +122,16 @@ if ($result->num_rows > 0) {
     echo "<table border='1' >";
             echo "<tr>";
                 echo "<th>planner ID</th>";
-                echo "<th>planner First Name</th>";
-                echo "<th>planner Last Name</th>";
-                echo "<th>party ID</th>";
+                echo "<th>Planner First Name</th>";
+                echo "<th>Planner Last Name</th>";
+                echo "<th>Party ID</th>";
                 echo "<th>Number of guests</th>";
-                echo "<th>date and Time</th>";
+                echo "<th>Date</th>";
+                echo "<th> Time</th>";
                 echo "<th>customer First Name</th>";
                 echo "<th>customer Last Name</th>";
-                echo "<th>place </th>";
-                echo "<th>party Type </th>";
+                echo "<th>Place </th>";
+                echo "<th>Party Type </th>";
                 echo "<th>Theme </th>";
     
             echo "</tr>";
@@ -141,7 +142,8 @@ if ($result->num_rows > 0) {
                 echo "<td>" . $row['PlannerLName'] . "</td>";
                 echo "<td>" . $row['PartyID'] . "</td>";
                 echo "<td>" . $row['NoOfGuests'] . "</td>";
-                echo "<td>" . $row['DateTime'] . "</td>";
+                echo "<td>" . $row['Date'] . "</td>";
+                echo "<td>" . $row['Time'] . "</td>";
                 echo "<td>" . $row['CustomerFName'] . "</td>";
                 echo "<td>" . $row['CustomerLName'] . "</td>";
                 echo "<td>" . $row['PlaceName'] . "</td>";
@@ -183,7 +185,7 @@ $varConn->close();
 
 
 <br/><br/><br/>
-<h3> Reassign a Party to Nnother Planner  </h3>
+<h3> Reassign a Party to Another Planner  </h3>
 <form action="reassignParty.php" method="post">
     Party ID: <input type="number" id="ID" name="ID" required/><br/><br/>
     <!--Previouse Planner's ID: <input type="oldID" id="ID" name="oldID"/><br/><br/> -->

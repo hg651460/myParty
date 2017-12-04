@@ -101,10 +101,14 @@ article {
     }
      
 $user_check = $_SESSION['login_user'];    
-$sql = "SELECT party.PlannerID, party.PartyID, party.NoOfGuests, party.DateTime, customer.CustomerFName, customer.CustomerLName, place.PlaceName, type.TypeName, theme.ThemeName ,planner.PlannerEmail
+$sql = "SELECT party.PlannerID, party.PartyID, party.NoOfGuests, party.Date, party.Time, customer.CustomerFName, customer.CustomerLName, place.PlaceName, type.TypeName, theme.ThemeName ,planner.PlannerEmail
         From  party, customer, place, theme, type, planner
-        WHERE party.CustomerID=customer.CustomerId AND party.PlaceID=place.PlaceID AND party.ThemeID=theme.ThemeID 
-               AND party.TypeID=type.TypeID AND party.PlannerID = planner.PlannerID AND planner.PlannerEmail='$user_check' ";  
+        WHERE party.CustomerID=customer.CustomerId 
+                AND party.PlaceID=place.PlaceID 
+                AND party.ThemeID=theme.ThemeID 
+                AND party.TypeID=type.TypeID 
+                AND party.PlannerID = planner.PlannerID 
+                AND planner.PlannerEmail='$user_check' ";  
      
     
      
@@ -114,11 +118,12 @@ if ($result->num_rows > 0) {
             echo "<tr>";
                 echo "<th>party ID</th>";
                 echo "<th>Number of guests</th>";
-                echo "<th>date and Time</th>";
+                echo "<th>Date</th>";
+                echo "<th>Time</th>";
                 echo "<th>customer First Name</th>";
                 echo "<th>customer Last Name</th>";
-                echo "<th>place </th>";
-                echo "<th>party Type </th>";
+                echo "<th>Place </th>";
+                echo "<th>Party Type </th>";
                 echo "<th>Theme </th>";
     
             echo "</tr>";
@@ -126,7 +131,8 @@ if ($result->num_rows > 0) {
             echo "<tr>";
                 echo "<td>" . $row['PartyID'] . "</td>";
                 echo "<td>" . $row['NoOfGuests'] . "</td>";
-                echo "<td>" . $row['DateTime'] . "</td>";
+                echo "<td>" . $row['Date'] . "</td>";
+                echo "<td>" . $row['Time'] . "</td>";
                 echo "<td>" . $row['CustomerFName'] . "</td>";
                 echo "<td>" . $row['CustomerLName'] . "</td>";
                 echo "<td>" . $row['PlaceName'] . "</td>";
