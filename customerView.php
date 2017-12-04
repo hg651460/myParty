@@ -81,13 +81,14 @@ article {
 <nav>
   <ul>
     <li><a href="Home.php">Home</a></li>
-    <li><a href="BookingForm.php">Reserve a place</a></li>
+    <li><a href="BookingForm.php">Reserve a place, Plan a party</a></li>
     <li><a href="profile.php">Profile</a></li>
     <li><a href="logout.php">Log Out</a></li>
 
   </ul>
 </nav>
 
+<h1 ><b> <center> <font color="#b1871b "> Customer View </font></center></b></h1>
 <article>
 <h1>Welcome    "  <?php echo $_SESSION ['login_user'];  ?> "   </h1>
 </br>
