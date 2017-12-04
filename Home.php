@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -9,41 +13,66 @@ div.container {
   
 }
 
-header, footer {
+header {
     padding: 1em;
-    color: LightCoral;
+    border-color: antiquewhite;
+    color:gray;
     background-color: pink;
     clear: left;
-    text-align: center;
-	background: url(header.jpg);
-	background-position: 100% 100%;
+    font-size: 250%;
+    font-style: italic;
+    text-align:center;
+    text-decoration-color:black;
+	background: url(p.jpg);
+
+    
+}
+    footer {
+    padding: 1em;
+    border-color: antiquewhite;
+    color: black
+    background-color: pink;
+    clear: left;
+    text-align:center;
+    text-decoration-color:black;
+	background: url(p.jpg);
+
     
 }
 
 nav {
     float: left;
-    width: 120px;
-     margin: 0;
+    width: 140px;
+    height: 500px;
+    margin: 0;
     padding: 1em;
+    background-color:darkkhaki;
 }
 
 nav ul {
     list-style-type:none;
     padding: 0;
+    
 }
    
 nav ul a {
     text-decoration:none;
+     
 }
 
 article {
     margin-left: 170px;
     border-left: 1px solid gray;
-    padding: 1em;
+    padding: 2em;
     overflow: hidden;
     color:PaleVioletRed;
 	text-align: center;
+    font-size: 150%;
     height: 400px;
+    background-color: antiquewhite;
+  
+  
+    
 }
 </style>
 </head>
@@ -57,22 +86,28 @@ article {
   
 <nav>
   <ul>
-    <li><a href="Signup.html">Sign up</a></li>
-     <li><a href="logIn.html">Log In</a></li>
+    <li><a href="Signup.php">Sign Up</a></li>
+    <li><a href="logIn.html">Log In</a></li>
     <li><a href="partyblogs.htm">Gallery</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
 <article>
-  <p>EVERY PARTY  </p>
-  <p>MUST BE</p>
-   <p> PERFECT </p>
+    <p><h2>EVERY PARTY  </h2></p>
+    <p><h2>MUST BE</h2></p>
+    <p> <h1>PERFECT</h1> </p>
+    <img src="beautiful.jpg" alt="You deserve the Best party ever" width="500" height="200" align="bottom">
  
   
 </article>
 
-<footer>Copyright &copy; MyParty.com </footer>
+<footer><script type="text/javascript">
+        
+        var today = new Date();
+        document.writeln( today.getFullYear() );
+    
+      </script>Copyright &copy; MyParty.com </footer>
 
 </div>
 
