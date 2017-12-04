@@ -14,10 +14,9 @@
     $sql   = "SELECT * FROM logininfo where email='$varUser' and password='$varPass'";
    $result = $varConn->query($sql);     
 if ($result->num_rows > 0) {
-        print ("<table border =1 ><th>UserName:</th> <th>PassWord</th>");
+       print ("Log In is succsessful");
         while($row = $result->fetch_assoc()) {
-            print_r("<tr><td>" . $row['email']. "</td><td> ". $row['password']. " ". "</td></tr>"); // userName & PassWord are a column in my testtable.
-            
+        
             
             if($row['PlannerID'])
             {
