@@ -37,41 +37,9 @@
         alert("wrong password , it must be with minimum of 6 characters and at least one number, and one upper case characters, and one special character"); 
         return false;  
         } 
-		//return true;
-		//end password alidation 
-	
-	   //**************************************************
-	   
-		//validate email ( NOT OK)
-    	
-       
-       /*
-       
-       //validate email 
-    	var isEmail = document.getElementById('email')
-        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-
-    
-        else if (isEmail.value.length == 0) 
-		{
-	    document.getElementById('EmailError').innerHTML = "  no email entered !";
-		return false;
-		}
-        else if(isEmail.value.match(emailReg))
-		{
-
-		return true;
-        }
 		
-        else
-		{
-	    document.getElementById('EmailError').innerHTML = "not a valid email";
-        //alert("no valid email !");
-		return true;
-        }
-		//end email validation 
+		
         
-       */
 	
 	return true;
 	}//end outer function
@@ -91,7 +59,7 @@
                   }
               else
                   {
-                      //console.log('Age NOT OK--> Only numbers');
+                      
                       document.getElementById('sp1').innerHTML="ERoRR...!!!  phone number must be 10 digits valid number";
                       document.getElementById('inp1').value="";
                       document.getElementById('inp1').focus();
