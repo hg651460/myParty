@@ -154,7 +154,7 @@ if ($result->num_rows > 0) {
      echo "</table>";
     }
  else{
-    header('Refresh: 5;url=Home.html');
+    //header('Refresh: 5;url=Home.html');
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($varConn);
 }
 
