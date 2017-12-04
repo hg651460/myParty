@@ -33,7 +33,7 @@ CREATE TABLE Place
   PlaceID int NOT NULL AUTO_INCREMENT,
   address 	VARCHAR(20)	NOT NULL,
   PlaceName 	VARCHAR(15)	NOT NULL,
-  City 		CHAR(15)		NOT NULL,
+  City 		CHAR(15)		NOT NULL DEFAULT 'Philadelphia',
   max_capacity	INT 		NOT NULL,
   min_capacity		INT		NOT NULL,
   costByPerson	INT 		NOT NULL,
