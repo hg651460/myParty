@@ -41,6 +41,22 @@ header {
     
 }
 
+
+nav {
+    float: left;
+    width: 120px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type:none;
+    padding: 0;
+}
+   
+nav ul a {
+    text-decoration:none;
+}
 article {
     margin-left: 170px;
     border-left: 1px solid gray;
@@ -68,7 +84,13 @@ article {
    <h1>MyParty</h1>
 </header>
   
+<nav>
+  <ul>
+    <li><a href="Home.php">Home</a></li>
+    
 
+  </ul>
+</nav>
 <article>
   <div> <p>welcome to the MyParty for party arrangement</p></div> 
   
@@ -81,11 +103,11 @@ article {
 <section>
 
 Email Address:
-</br><input type="email" placeholder="Enter Email..." size=30 name="email" required>></br>
+</br><input type="email" placeholder="Enter Email..." size=30 name="email" required></br>
 </br>
 
 Password:
-</br><input type="Password" placeholder="Enter Password" size=30 name="pass" required> ></br>
+</br><input type="Password" placeholder="Enter Password" size=30 name="pass" required></br>
 </br>
  <p > Not a member yet ?
  <a href="Signup.php" class="to_register">Join us</a>
@@ -102,7 +124,12 @@ Password:
 </div>
 </article>
 
-<footer>Copyright &copy; MyParty.com </footer>
+<footer><script type="text/javascript">
+        
+        var today = new Date();
+        document.writeln( today.getFullYear() );
+    
+      </script>Copyright &copy; MyParty.com </footer>
 
 </div>
 
