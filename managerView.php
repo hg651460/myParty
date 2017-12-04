@@ -44,7 +44,7 @@ header {
 
 nav {
     float: left;
-    width: 120px;
+    width: 250px;
     margin: 0;
     padding: 1em;
 }
@@ -94,73 +94,20 @@ article {
   <ul>
     <li><a href="Home.php">Home</a></li>
     <li><a href="logout.php">Log Out</a></li>
-
+    <p>View Reports :</p>
+    <li><a href="viewAll.php">View All </a></li>
+    <li><a href="viewCustHaveParty.php">View customers have  parties </a></li>
+    <li><a href="plannerhaveParty.php">View Planners have  parties </a></li>
   </ul>
 </nav>
     <h1 ><b> <center> <font color="#b1871b "> Manager View </font></center></b></h1>
+    <br/><br/>
+    
+    <p ><center><font color= "#2F4F4F"> Welcome   Manager "  <?php echo $_SESSION ['login_user'];  ?> "    to your view</center></p>
 <article>
-<h1>Welcome    Manager "  <?php echo $_SESSION ['login_user'];  ?> "    to your view</h1>
-<p> Your List of all planners , customers and their party orders : </p>
  <div> 
 
-<?php
 
-     $varConn = Connect();
-    if (!$varConn)
-    {
-        die('Could not connect: ' . mysql_error());
-    }
-     
-$user_check = $_SESSION['login_user'];    
-$sql = 'SELECT planner.PlannerID, planner.PlannerFName, planner.PlannerLName, party.PartyID, party.NoOfGuests, party.Date, party.Time, customer.CustomerFName, customer.CustomerLName, place.PlaceName, type.TypeName, theme.ThemeName 
-        From  party, customer, place, theme, type, planner
-        WHERE party.CustomerID=customer.CustomerId AND party.PlaceID=place.PlaceID AND party.ThemeID=theme.ThemeID 
-               AND party.TypeID=type.TypeID AND party.PlannerID=planner.PlannerID';
-     
-$result = $varConn->query($sql);     
-if ($result->num_rows > 0) {
-    echo "<table border='1' >";
-            echo "<tr>";
-                echo "<th>planner ID</th>";
-                echo "<th>Planner First Name</th>";
-                echo "<th>Planner Last Name</th>";
-                echo "<th>Party ID</th>";
-                echo "<th>Number of guests</th>";
-                echo "<th>Date</th>";
-                echo "<th> Time</th>";
-                echo "<th>customer First Name</th>";
-                echo "<th>customer Last Name</th>";
-                echo "<th>Place </th>";
-                echo "<th>Party Type </th>";
-                echo "<th>Theme </th>";
-    
-            echo "</tr>";
- while($row = mysqli_fetch_array($result)) {
-            echo "<tr>";
-                echo "<td>" . $row['PlannerID'] . "</td>";
-                echo "<td>" . $row['PlannerFName'] . "</td>";
-                echo "<td>" . $row['PlannerLName'] . "</td>";
-                echo "<td>" . $row['PartyID'] . "</td>";
-                echo "<td>" . $row['NoOfGuests'] . "</td>";
-                echo "<td>" . $row['Date'] . "</td>";
-                echo "<td>" . $row['Time'] . "</td>";
-                echo "<td>" . $row['CustomerFName'] . "</td>";
-                echo "<td>" . $row['CustomerLName'] . "</td>";
-                echo "<td>" . $row['PlaceName'] . "</td>";
-                echo "<td>" . $row['TypeName'] . "</td>";
-                echo "<td>" . $row['ThemeName'] . "</td>";
-            echo "</tr>";
-        }
-     echo "</table>";
-    }
- else{
-    //header('Refresh: 5;url=Home.html');
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($varConn);
-}
-
-$varConn->close();
-
-?> 
       <br/><br/><br/>
      <h2>**** Manage your planners , parties , and custoers ****</h2>  
      <br/><br/><br/>
