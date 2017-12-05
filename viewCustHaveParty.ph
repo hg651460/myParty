@@ -102,7 +102,7 @@ article {
     <h1 ><b> <center> <font color="#b1871b "> Manager View </font></center></b></h1>
 <article>
 
-<p> Your List of all planners , customers and their party orders : </p>
+<p> This is a List of all customers who have party orders : </p>
  <div> 
 
 <?php
