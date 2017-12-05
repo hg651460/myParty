@@ -37,9 +37,41 @@
         alert("wrong password , it must be with minimum of 6 characters and at least one number, and one upper case characters, and one special character"); 
         return false;  
         } 
+		//return true;
+		//end password alidation 
+	
+	   //**************************************************
+	   
+		//validate email ( NOT OK)
+    	
+       
+       /*
+       
+       //validate email 
+    	var isEmail = document.getElementById('email')
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+    
+        else if (isEmail.value.length == 0) 
+		{
+	    document.getElementById('EmailError').innerHTML = "  no email entered !";
+		return false;
+		}
+        else if(isEmail.value.match(emailReg))
+		{
+
+		return true;
+        }
 		
-		
+        else
+		{
+	    document.getElementById('EmailError').innerHTML = "not a valid email";
+        //alert("no valid email !");
+		return true;
+        }
+		//end email validation 
         
+       */
 	
 	return true;
 	}//end outer function
@@ -47,7 +79,7 @@
    </script>
     <script>
         function num(){
-            $myNum=document.getElementById('inp1').value;
+            $myNum=document.getElementById('phone').value;
             
               console.log($myNum);
               $rg = new RegExp("^[0-9]{10}$");  //^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$
@@ -59,10 +91,10 @@
                   }
               else
                   {
-                      
+                      //console.log('Age NOT OK--> Only numbers');
                       document.getElementById('sp1').innerHTML="ERoRR...!!!  phone number must be 10 digits valid number";
-                      document.getElementById('inp1').value="";
-                      document.getElementById('inp1').focus();
+                      document.getElementById('phone').value="";
+                      document.getElementById('phone').focus();
                   }
               }
         }
@@ -200,7 +232,7 @@ input[type=text], input[type=password] {
 		<input id="Lname" placeholder="Last Name" class="input" name="Lname" type="text" value="" required><br />
     
         <label for="phone">phone number:</label><br />
-         <input type="tel" onblur="num();" id="inp1" placeholder="0000000000" required/><span id="sp1"></span><br>
+         <input type="tel" onblur="num();" id="phone" name ="phone" placeholder="0000000000" required/><span id="sp1"></span><br>
 	
 		<label for="email">Email:</label><br />
 		<input id="email" placeholder="example@example.com" class="input" name="email" type="email" value="" required ><span id="EmailError"></span><br />
